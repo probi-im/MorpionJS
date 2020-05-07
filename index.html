@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Morpion JS</title>
+  </head>
+  <body>
+    <header>Morpion JS</header>
+    <div class="container">
+      <div class="grille">
+        <div class="case" onclick="toggle(0, 0)"></div>
+        <div class="case" onclick="toggle(1, 0)"></div>
+        <div class="case" onclick="toggle(2, 0)"></div>
+        <div class="case" onclick="toggle(0, 1)"></div>
+        <div class="case" onclick="toggle(1, 1)"></div>
+        <div class="case" onclick="toggle(2, 1)"></div>
+        <div class="case" onclick="toggle(0, 2)"></div>
+        <div class="case" onclick="toggle(1, 2)"></div>
+        <div class="case" onclick="toggle(2, 2)"></div>
+      </div>
+      <div class="bottom">
+        <span id="info-msg">
+          C'est au tour de : <span id="current-player">Joueur 1</span>
+        </span>
+        <button onclick="resetGame()">Reset</button>
+      </div>
+      <div class="inputs">
+        <div class="input-group">
+          <label for="xPlayerName">Nom du joueur "X" :</label>
+          <input
+            type="text"
+            id="xPlayerName"
+            value="Joueur 1"
+            onkeyup="updatePlayerName(0, this.value)"
+          />
+        </div>
+        <div class="input-group">
+          <label for="oPlayerName">Nom du joueur "O" :</label>
+          <input
+            type="text"
+            id="oPlayerName"
+            value="Joueur 2"
+            onkeyup="updatePlayerName(1, this.value)"
+          />
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

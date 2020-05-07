@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  background-color: #121212;
+}
+header {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white;
+  background-color: #080808;
+}
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+}
+.grille {
+  margin: 0 auto;
+  width: 600px;
+  height: 600px;
+  display: grid;
+  grid-template:
+    "a b c" 200px
+    "d e f" 200px
+    "g h i" 200px;
+}
+.case {
+  cursor: pointer;
+  border: 1px solid white;
+  color: white;
+  position: relative;
+}
+.case.croix::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  height: 5px;
+  width: 150px;
+  background-color: white;
+}
+.case.croix::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 150px;
+  height: 5px;
+  background-color: white;
+}
+.case.rond::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 125px;
+  height: 125px;
+  border: 5px solid white;
+  border-radius: 50%;
+}
+.bottom {
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.bottom #info-msg {
+  font-size: 1.7rem;
+  color: white;
+}
+.bottom button {
+  margin-left: auto;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  padding: 5px 15px;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+.bottom button:hover {
+  background-color: white;
+  color: black;
+}
+.inputs {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.inputs .input-group {
+  color: white;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+.input-group input {
+  margin-left: 5px;
+  font-size: 1.3rem;
+  border-radius: 7px;
+  outline: none;
+}
